@@ -13,6 +13,7 @@ int main() {
 
 
     ifstream fin("datensumme.txt");
+    ofstream fout("hist.txt");
     int n_i;
     for(int i = 0 ; i < 234 ; ++i) {
         fin >> daten[i];  
@@ -20,6 +21,9 @@ int main() {
     }
     for ( unsigned int k = 0 ; k < zaehler . size () ; ++ k ) {
     std :: cout << k << ":" << zaehler [ k ] << std :: endl ;
+    fout << k << " " << zaehler [ k ] << std :: endl ;
     }
+
+    fout.close();
     fin.close();
 }
