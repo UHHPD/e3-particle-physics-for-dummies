@@ -1,10 +1,13 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
+#include <math.h>
+using namespace std;
 
 
-double poisson(double mu, int k) {
-    return 0;
+double poisson(double mu, int k){
+  double p;
+  p=(pow(mu,k)*exp(-mu)/(tgamma(k+1)));
 }
 
 int main() {
