@@ -13,7 +13,7 @@ int main() {
 
 
     ifstream fin("datensumme.txt");
-    ofstream fout("hist.txt");
+    ofstream fout("histpoi.txt");
     int n_i;
     for(int i = 0 ; i < 234 ; ++i) {
         fin >> daten[i];  
