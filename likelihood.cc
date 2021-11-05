@@ -20,6 +20,8 @@ int main() {
 
     ifstream fin("datensumme.txt");
     ofstream fout("likelihood.txt");
+    ofstream fout1("nll.txt");
+    ofstream fout2("deltanll.txt");
   
     for(int i = 0 ; i < 234 ; ++i) {
         fin >> zahl;
@@ -31,8 +33,11 @@ int main() {
     double mu2 = 0;
     while (mu2 < 6){
       L=1;
-      double a = prob(daten, mu2);
-      fout << mu2 << " " << a << std :: endl ;
+      double LH = prob(daten, mu2);
+      double LH1 = prob(daten, mu1);
+      fout << mu2 << " " << LH << std :: endl ;
+      fout1 << mu2 << " " << -2*log(LH) << std :: endl ;
+      fout2 << mu2 << " " << -2*log(LH)+2*log(LH1) << std :: endl ;
       mu2 += 0.1;
     }
 
@@ -40,3 +45,4 @@ int main() {
     fin.close();
 
 }
+// 2b) The maximum of the likelihood plot "out2" resembles the most likely mean. That also fits the result from 2a).
